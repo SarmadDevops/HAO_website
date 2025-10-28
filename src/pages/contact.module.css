@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+.back {
+  background-image: url("../assets/back.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 80vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.herosection {
+  text-align: center;
+  color: #fff;
+  font-family: "Montserrat", Arial;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+.herosection h1 {
+  font-size: clamp(3rem, 5vw, 9rem);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.sertitle {
+  color: #f3680c;
+}
+
+.contactWrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 40px;
+  margin: 15px;
+  color: #000;
+  font-family: "Montserrat", sans-serif;
+  flex-wrap: wrap;
+}
+
+.contactBox {
+  padding: 50px;
+  border-radius: 10px;
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  text-align: center;
+  box-shadow: -2px 3px 21px rgba(0, 0, 0, 0.3);
+}
+
+.icon {
+  font-size: 35px;
+  padding: 15px;
+  color: #000;
+  margin-top: 5px;
+  background-color: #dddee4;
+  border-radius: 40px;
+}
+
+.contactBox h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000b47;
+  margin-bottom: 18px;
+}
+
+.contactBox p {
+  font-size: 16px;
+  color: #6e789e;
+  margin: 4px 0;
+}
+
+.number {
+  font-size: 12px;
+}
+
+.wrapper {
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 1000px;
+  font-family: "Montserrat", sans-serif;
+  color: #000;
+  text-align: center;
+  margin: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.subheading {
+  color: #f74f22;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.heading {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 5px;
+  margin-bottom: 24px;
+  color: #000;
+  text-align: center;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  border: 1px solid #d9d9d9;
+  padding: 50px;
+  border-radius: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input {
+  padding: 12px 16px;
+  border-radius: 6px;
+  border: 1px solid #d9d9d9;
+  color: #000;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: #000;
+}
+
+.textarea {
+  grid-column: span 2;
+  padding: 12px 16px;
+  border-radius: 6px;
+  border: 1px solid #d9d9d9;
+  color: #000;
+  font-size: 14px;
+  min-height: 120px;
+  resize: vertical;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.buttonWrapper {
+  grid-column: span 2;
+  text-align: center;
+}
+
+.button {
+  background-color: #f74f22;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.map {
+  width: 98vw;
+  height: 400px;
+  margin-top: 50px;
+  margin-bottom: -70px;
+  border-radius: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.map img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+  filter: brightness(70%);
+
+}

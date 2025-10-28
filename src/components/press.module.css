@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.pressContainer {
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 40px 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+.pressTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.logoRow {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.logoImage {
+  height: 80px;
+  object-fit: contain;
+}

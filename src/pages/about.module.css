@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.back {
+  background-image: url('../assets/back.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 80vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.herosection {
+  text-align: center;
+  color: #fff;
+  font-family: 'Montserrat', Arial;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+.herosection h1 {
+  font-size: clamp(3rem, 5vw, 9rem);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.sertitle{
+  color: #f3680c;
+}
