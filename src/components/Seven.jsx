@@ -213,14 +213,16 @@ const Seven = () => {
                 <div
                   className="h-full bg-[#E9542D] transition-all duration-100"
                   style={{ width: `${percentage}%` }}
+
                 />
               </div>
               <div
                 className="absolute -top-1.5 flex flex-col items-center cursor-grab active:cursor-grabbing"
                 style={{
-                  left: `${percentage}%`,
-                  transform: "translateX(-50%)",
-                }}
+  left: `${percentage}%`,
+  transform: 'translateX(-50%)'
+}}
+
                 onMouseDown={handleMouseDown}
                 onTouchStart={handleTouchStart}
               >

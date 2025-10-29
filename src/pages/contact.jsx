@@ -3,7 +3,6 @@ import Header from "../components/header.jsx";
 import map from "../assets/map.png";
 import Homebar from "../components/homebar.jsx";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
-import TopNavbar from "../components/topNavbar.jsx";
 
 export default function Contact() {
   return (
