@@ -1,23 +1,41 @@
-import "./App.css";
-
-
-import { Routes, Route } from "react-router-dom";
-import Service from "./pages/service";
-import About from "./pages/about";
-import Contact from "./pages/contact";
+import { lazy } from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
+import Layout from "./components/layout/Layout";
+import UIProvider from "./context/UIProvider";
 import Home from "./pages/Home";
 
-function App() {
+const About = lazy(() => import("./pages/About"));
+const Projects = lazy(() => import("./pages/Projects"));
+const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
+const GalleryPage = lazy(() => import("./pages/GalleryPage"));
+const Blog = lazy(() => import("./pages/Blog"));
+const BlogPost = lazy(() => import("./pages/BlogPost"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Donate = lazy(() => import("./pages/Donate"));
+const Volunteer = lazy(() => import("./pages/Volunteer"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+
+export default function App() {
   return (
-    <div>
+    <UIProvider>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/service" element={<Service />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="projects" element={<Projects />} />
+          <Route path="projects/:slug" element={<ProjectDetail />} />
+          {/* Old URLs from the previous site */}
+          <Route path="service" element={<Navigate to="/projects" replace />} />
+          <Route path="services" element={<Navigate to="/projects" replace />} />
+          <Route path="gallery" element={<GalleryPage />} />
+          <Route path="blog" element={<Blog />} />
+          <Route path="blog/:slug" element={<BlogPost />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="donate" element={<Donate />} />
+          <Route path="volunteer" element={<Volunteer />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
       </Routes>
-    </div>
+    </UIProvider>
   );
 }
-
-export default App;
