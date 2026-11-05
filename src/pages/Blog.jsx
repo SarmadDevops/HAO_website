@@ -23,7 +23,7 @@ export default function Blog() {
         <div className="container-site">
           <ul className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
             {posts.map((post, index) => (
-              <Reveal as="li" key={post.slug} delay={(index % 3) * 80}>
+              <Reveal as="li" key={post.slug} index={index}>
                 <BlogCard post={post} headingLevel="h2" />
               </Reveal>
             ))}

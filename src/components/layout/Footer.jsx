@@ -24,7 +24,7 @@ export default function Footer() {
             education, food and emergency relief.
           </p>
           <p className="mt-4 text-white/70">
-            <span lang="ur" dir="rtl" className="mr-2 font-semibold text-accent">
+            <span lang="ur" dir="rtl" className="mr-2 inline-block font-semibold text-accent">
               {site.taglineUrdu}
             </span>
             <span className="text-sm">— {site.tagline}</span>
@@ -83,9 +83,9 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href={`mailto:${site.contact.email}`} className={`inline-flex items-center gap-3 ${linkClass}`}>
+              <a href={`mailto:${site.contact.email}`} className={`inline-flex max-w-full items-center gap-3 ${linkClass}`}>
                 <LuMail className="h-4 w-4 shrink-0 text-accent" aria-hidden="true" />
-                <span className="min-w-0">
+                <span className="min-w-0 [overflow-wrap:anywhere]">
                   <EmailText email={site.contact.email} />
                 </span>
               </a>

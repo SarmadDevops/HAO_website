@@ -18,7 +18,7 @@ export default function Logo({ tone = "dark", onClick }) {
         <span className={`font-heading text-[1.05rem] font-bold sm:text-lg ${light ? "text-white" : "text-dark"}`}>
           Humanity Alliance
         </span>
-        <span className={`mt-1 text-[0.7rem] font-semibold uppercase tracking-[0.2em] ${light ? "text-accent" : "text-secondary"}`}>
+        <span className={`mt-1 text-[0.7rem] font-semibold uppercase tracking-[0.2em] ${light ? "text-accent" : "text-primary"}`}>
           Organization
         </span>
       </span>

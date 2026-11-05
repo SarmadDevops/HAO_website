@@ -8,9 +8,9 @@ export default function VolunteerCTA() {
   const { openVolunteer } = useUI();
 
   return (
-    <section aria-labelledby="volunteer-cta-title" className="bg-light">
+    <section aria-labelledby="volunteer-cta-title" className="bg-surface">
       <div className="container-site py-10 sm:py-12">
-        <div className="grid items-center gap-6 rounded-lg border border-border bg-surface p-5 sm:grid-cols-[auto_1fr] sm:p-6 lg:grid-cols-[auto_1fr_auto] lg:gap-10 lg:p-7">
+        <div className="grid items-center gap-6 rounded-2xl border border-border/60 bg-light p-5 sm:grid-cols-[auto_1fr] sm:p-6 lg:grid-cols-[auto_1fr_auto] lg:gap-10 lg:p-7">
           <div className="aspect-[16/9] w-full overflow-hidden rounded-md sm:aspect-square sm:w-32 lg:w-36">
             <ResponsiveImage
               image={images.villageVisit}

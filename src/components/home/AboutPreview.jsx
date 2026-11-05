@@ -8,7 +8,7 @@ import ResponsiveImage from "../common/ResponsiveImage";
 
 export default function AboutPreview({ showLink = true, showTimeline = true }) {
   return (
-    <section aria-labelledby="about-title" className="section">
+    <section aria-labelledby="about-title" className="section bg-light">
       <div className="container-site grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <Reveal className="relative pb-10 pr-6 sm:pb-14 sm:pr-14">
           <div className="aspect-[4/3] overflow-hidden rounded-lg">
@@ -25,8 +25,8 @@ export default function AboutPreview({ showLink = true, showTimeline = true }) {
               className="aspect-[4/3] h-full w-full object-cover"
             />
           </div>
-          <div className="absolute -left-1 top-6 rounded-md bg-secondary px-4 py-3 text-white shadow-lg sm:left-[-1rem] sm:px-5 sm:py-4">
-            <p className="text-xs font-semibold uppercase tracking-wider text-white/85">Serving since</p>
+          <div className="absolute -left-1 top-6 rounded-md bg-accent px-4 py-3 text-dark shadow-lg sm:left-[-1rem] sm:px-5 sm:py-4">
+            <p className="text-xs font-semibold uppercase tracking-wider text-dark/75">Serving since</p>
             <p className="font-heading text-3xl font-bold leading-none sm:text-4xl">{site.foundedYear}</p>
           </div>
         </Reveal>
@@ -53,7 +53,7 @@ export default function AboutPreview({ showLink = true, showTimeline = true }) {
             {history.map((item) => (
               <li key={item.year} className="relative pb-5 pl-6 last:pb-0">
                 <span className="absolute -left-[7px] top-1.5 h-3 w-3 rounded-full border-2 border-surface bg-accent" aria-hidden="true" />
-                <p className="text-sm font-bold uppercase tracking-wider text-secondary">{item.year}</p>
+                <p className="text-sm font-bold uppercase tracking-wider text-primary">{item.year}</p>
                 <p className="font-semibold text-dark">{item.title}</p>
               </li>
             ))}

@@ -37,8 +37,8 @@ export default function About() {
           <SectionHeader id="journey-title" eyebrow="Our journey" title="How HAO grew" align="center" />
           <ol className="mx-auto mt-12 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {history.map((item, index) => (
-              <Reveal as="li" key={item.year} delay={index * 80} className="rounded-lg border-t-4 border-accent bg-surface p-6">
-                <p className="font-heading text-2xl font-bold text-secondary">{item.year}</p>
+              <Reveal as="li" key={item.year} index={index} className="rounded-lg border-t-4 border-accent bg-surface p-6">
+                <p className="font-heading text-2xl font-bold text-primary">{item.year}</p>
                 <h3 className="mt-2 text-lg font-semibold">{item.title}</h3>
                 <p className="mt-2 text-muted">{item.text}</p>
               </Reveal>

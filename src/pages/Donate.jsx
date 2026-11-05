@@ -24,15 +24,18 @@ export default function Donate() {
         image={images.waterPump}
         imagePosition="50% 60%"
       />
-      <section aria-labelledby="donate-steps" className="section">
+      <section aria-labelledby="donate-steps" className="section bg-surface">
         <div className="container-site max-w-3xl">
           <h2 id="donate-steps" className="heading-lg">
             How to give
           </h2>
           <p className="lead mb-10 mt-3">
-            It takes three simple steps. If you have any questions, our team is happy to help on WhatsApp.
+            A few short steps: choose an amount and a cause, see how to transfer, then share your receipt with our team.
+            Questions? We are happy to help on WhatsApp.
           </p>
-          <DonatePanel initialFundId={params.get("cause") || undefined} />
+          <div className="rounded-2xl border border-border/60 bg-surface p-5 shadow-[0_18px_40px_-24px_rgb(var(--color-dark)/0.3)] sm:p-8">
+            <DonatePanel initialFundId={params.get("cause") || undefined} />
+          </div>
         </div>
       </section>
       <CausesSection />

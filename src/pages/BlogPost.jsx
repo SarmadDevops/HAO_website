@@ -37,7 +37,7 @@ function PostContent({ post }) {
             All news
           </Link>
           <p className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted">
-            <span className="font-semibold uppercase tracking-wider text-secondary">{post.category}</span>
+            <span className="font-semibold uppercase tracking-wider text-primary">{post.category}</span>
             {date && (
               <>
                 <span aria-hidden="true">·</span>

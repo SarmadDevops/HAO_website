@@ -13,7 +13,7 @@ export default function TeamMemberCard({ member, headingLevel: Heading = "h3" })
         />
       </div>
       <Heading className="heading-md mt-4">{member.name}</Heading>
-      <p className="mt-0.5 font-semibold text-secondary">{member.role}</p>
+      <p className="mt-0.5 font-semibold text-primary">{member.role}</p>
       {member.bio && <p className="mt-2 text-muted">{member.bio}</p>}
       {member.social?.length > 0 && (
         <SocialLinks

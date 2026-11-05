@@ -32,15 +32,8 @@ export default {
         danger: token("danger"),
       },
       fontFamily: {
-        heading: ["Lora", "Georgia", "serif"],
-        sans: [
-          '"Source Sans 3"',
-          "system-ui",
-          "-apple-system",
-          "Segoe UI",
-          "Roboto",
-          "sans-serif",
-        ],
+        heading: ["Poppins", "system-ui", "sans-serif"],
+        sans: ["Poppins", "system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"],
       },
       maxWidth: {
         site: "1240px",

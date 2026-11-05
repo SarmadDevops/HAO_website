@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
-import { LuArrowRight } from "react-icons/lu";
+import { LuArrowRight, LuHeartHandshake } from "react-icons/lu";
 import { featuredProjects } from "../../data/projects";
 import ProjectCard from "../common/ProjectCard";
 import Reveal from "../common/Reveal";
 import SectionHeader from "../common/SectionHeader";
+
+// The large bento tile needs a photo, so lead with the first featured project that has one.
+const lead = featuredProjects.find((project) => project.image) ?? featuredProjects[0];
+const rest = featuredProjects.filter((project) => project !== lead);
 
 export default function ProjectsSection() {
   return (
@@ -13,6 +17,7 @@ export default function ProjectsSection() {
           <SectionHeader
             id="projects-title"
             tone="light"
+            icon={LuHeartHandshake}
             eyebrow="Together, we can change lives"
             title="Key Services & Projects"
             intro="From a ration bag in 2020 to schools, water pumps and emergency relief. Here is what our volunteers do every day."
@@ -24,8 +29,11 @@ export default function ProjectsSection() {
         </div>
 
         <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {featuredProjects.map((project, index) => (
-            <Reveal as="li" key={project.slug} delay={(index % 3) * 80}>
+          <Reveal as="li" index={0} className="sm:col-span-2 lg:row-span-2">
+            <ProjectCard project={lead} featured />
+          </Reveal>
+          {rest.map((project, index) => (
+            <Reveal as="li" key={project.slug} index={index + 1}>
               <ProjectCard project={project} />
             </Reveal>
           ))}

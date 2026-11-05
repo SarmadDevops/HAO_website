@@ -8,7 +8,7 @@ export default function FormField({ label, htmlFor, error, errorId, required, hi
       <label htmlFor={htmlFor} className="form-label">
         {label}
         {required ? (
-          <span className="text-secondary" aria-hidden="true">
+          <span className="text-danger" aria-hidden="true">
             {" "}
             *
           </span>

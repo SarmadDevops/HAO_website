@@ -56,7 +56,7 @@ export default function Contact() {
                 const Icon = method.icon;
                 const content = (
                   <>
-                    <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent-soft text-secondary">
+                    <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent text-dark">
                       <Icon className="h-5 w-5" aria-hidden="true" />
                     </span>
                     <span className="min-w-0">
@@ -80,7 +80,7 @@ export default function Contact() {
             </ul>
 
             <div className="mt-8">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-secondary">Follow our work</h3>
+              <h3 className="text-sm font-bold uppercase tracking-wider text-primary">Follow our work</h3>
               <SocialLinks className="mt-3" label="HAO on social media" />
             </div>
           </div>

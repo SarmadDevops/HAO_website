@@ -29,7 +29,7 @@ export default function Projects() {
         <div className="container-site">
           <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {projects.map((project, index) => (
-              <Reveal as="li" key={project.slug} delay={(index % 3) * 80}>
+              <Reveal as="li" key={project.slug} index={index}>
                 <ProjectCard project={project} headingLevel="h2" />
               </Reveal>
             ))}

@@ -11,10 +11,10 @@ export default function ProgressBar({ percent, label }) {
       aria-valuemax={100}
       aria-valuenow={percent}
       aria-label={label}
-      className="h-2.5 w-full overflow-hidden rounded-full bg-primary-soft"
+      className="h-2.5 w-full overflow-hidden rounded-full bg-accent-soft"
     >
       <div
-        className="h-full rounded-full bg-primary transition-[width] duration-[1400ms] ease-out"
+        className="h-full rounded-full bg-accent transition-[width] duration-[1400ms] ease-out"
         style={{ width: inView ? `${percent}%` : "0%" }}
       />
     </div>

@@ -29,7 +29,7 @@ export default function Volunteer() {
               HAO is run by more than 1,500 volunteers, organised into city chapters across Pakistan and supported by
               ambassadors abroad. Whatever your skills, there is a place for you.
             </p>
-            <h3 className="mt-8 text-sm font-bold uppercase tracking-wider text-secondary">Departments you can join</h3>
+            <h3 className="mt-8 text-sm font-bold uppercase tracking-wider text-primary">Departments you can join</h3>
             <ul className="mt-4 grid grid-cols-2 gap-3">
               {volunteerDepartments.map((department) => (
                 <li key={department} className="flex items-center gap-2">

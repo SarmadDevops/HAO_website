@@ -1,3 +1,4 @@
+import { LuHeart } from "react-icons/lu";
 import { causes } from "../../data/causes";
 import CauseCard from "../common/CauseCard";
 import Reveal from "../common/Reveal";
@@ -10,13 +11,14 @@ export default function CausesSection() {
         <Reveal className="lg:pr-6 lg:pt-4">
           <SectionHeader
             id="causes-title"
+            icon={LuHeart}
             eyebrow="Donate for causes"
             title="Where your donation goes right now"
             intro="These are the campaigns we are raising funds for today. Every rupee brings a village closer to clean water or a child closer to a proper classroom."
           />
         </Reveal>
         {causes.map((cause, index) => (
-          <Reveal key={cause.id} delay={(index + 1) * 100}>
+          <Reveal key={cause.id} index={index}>
             <CauseCard cause={cause} />
           </Reveal>
         ))}

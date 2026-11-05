@@ -18,7 +18,7 @@ export default function BlogCard({ post, headingLevel: Heading = "h3" }) {
       </div>
       <div className="flex flex-1 flex-col pt-5">
         <p className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted">
-          <span className="font-semibold uppercase tracking-wider text-secondary">{post.category}</span>
+          <span className="font-semibold uppercase tracking-wider text-primary">{post.category}</span>
           {date && (
             <>
               <span aria-hidden="true">·</span>

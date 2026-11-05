@@ -8,9 +8,9 @@ export default function DonateModal({ isOpen, onClose, causeId }) {
       onClose={onClose}
       size="lg"
       title="Donate to HAO"
-      description="Choose a cause and transfer directly to HAO. No payment is taken on this website."
+      description="Transfer directly to HAO. No payment is taken on this website."
     >
-      <DonatePanel initialFundId={causeId || undefined} />
+      <DonatePanel initialFundId={causeId || undefined} stickyFooter />
     </Modal>
   );
 }

@@ -124,7 +124,7 @@ export default function VolunteerForm({ onDone }) {
         )}
       </button>
       <p className="text-sm text-muted">
-        Fields marked <span className="text-secondary">*</span> are required. We use your details only to contact you
+        Fields marked <span className="text-danger">*</span> are required. We use your details only to contact you
         about volunteering.
       </p>
     </form>
