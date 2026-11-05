@@ -8,7 +8,9 @@ import ResponsiveImage from "./ResponsiveImage";
 
 export default function CauseCard({ cause, headingLevel: Heading = "h3", showDetails = true }) {
   const { openDonate } = useUI();
-  const percent = percentOf(cause.raised, cause.goal);
+  const hasFunding = cause.goal > 0;
+  const percent = hasFunding ? percentOf(cause.raised, cause.goal) : 0;
+  const detailsHref = cause.detailsHref ?? (cause.projectSlug && `/projects/${cause.projectSlug}`);
   const Icon = fundIcon(cause.id);
 
   return (
@@ -21,6 +23,12 @@ export default function CauseCard({ cause, headingLevel: Heading = "h3", showDet
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
           />
         </div>
+        {cause.logo && (
+          <ResponsiveImage
+            image={cause.logo}
+            className="absolute right-3 top-3 h-auto w-24 rounded-md object-contain shadow-sm sm:w-28"
+          />
+        )}
         <span className="absolute bottom-0 left-5 inline-flex h-12 w-12 translate-y-1/2 items-center justify-center rounded-xl bg-accent text-dark shadow-sm">
           <Icon className="h-6 w-6" aria-hidden="true" />
         </span>
@@ -30,29 +38,43 @@ export default function CauseCard({ cause, headingLevel: Heading = "h3", showDet
         <Heading className="heading-md">{cause.title}</Heading>
         <p className="mt-2 flex-1 text-muted">{cause.summary}</p>
 
-        <div className="mt-5">
-          <div className="mb-2 flex items-baseline justify-between gap-3 text-sm">
-            <span className="font-semibold text-dark">{percent}% funded</span>
+        {hasFunding ? (
+          <div className="mt-5">
+            <div className="mb-2 flex items-baseline justify-between gap-3 text-sm">
+              <span className="font-semibold text-dark">{percent}% funded</span>
+            </div>
+            <ProgressBar percent={percent} label={`${cause.title}: ${percent}% of goal raised`} />
+            <dl className="mt-3 grid grid-cols-2 gap-3 text-sm">
+              <div>
+                <dt className="text-muted">Raised</dt>
+                <dd className="font-semibold text-dark">{formatRupees(cause.raised)}</dd>
+              </div>
+              <div className="text-right">
+                <dt className="text-muted">Goal</dt>
+                <dd className="font-semibold text-dark">{formatRupees(cause.goal)}</dd>
+              </div>
+            </dl>
           </div>
-          <ProgressBar percent={percent} label={`${cause.title}: ${percent}% of goal raised`} />
-          <dl className="mt-3 grid grid-cols-2 gap-3 text-sm">
-            <div>
-              <dt className="text-muted">Raised</dt>
-              <dd className="font-semibold text-dark">{formatRupees(cause.raised)}</dd>
-            </div>
-            <div className="text-right">
-              <dt className="text-muted">Goal</dt>
-              <dd className="font-semibold text-dark">{formatRupees(cause.goal)}</dd>
-            </div>
-          </dl>
-        </div>
+        ) : (
+          <div className="mt-5 text-sm">
+            <p className="font-semibold text-dark">Fundraising in progress</p>
+            <p className="mt-1 text-muted">Funding details coming soon</p>
+          </div>
+        )}
 
         <div className="mt-6 flex flex-wrap gap-3">
-          <button type="button" className="btn btn-donate flex-1" onClick={() => openDonate(cause.id)}>
-            Donate
-          </button>
-          {showDetails && cause.projectSlug && (
-            <Link to={`/projects/${cause.projectSlug}`} className="btn btn-outline flex-1">
+          {cause.donateHref ? (
+            <Link to={cause.donateHref} className="btn btn-donate flex-1">
+              Donate
+              <span className="sr-only"> to {cause.title}</span>
+            </Link>
+          ) : (
+            <button type="button" className="btn btn-donate flex-1" onClick={() => openDonate(cause.id)}>
+              Donate
+            </button>
+          )}
+          {showDetails && detailsHref && (
+            <Link to={detailsHref} className="btn btn-outline flex-1">
               Details
               <LuArrowRight className="h-4 w-4" aria-hidden="true" />
               <span className="sr-only">about {cause.title}</span>

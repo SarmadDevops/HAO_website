@@ -2,7 +2,7 @@ import { images } from "./images";
 
 export const founder = {
   name: "Ismael Chohan",
-  role: "Founder & CEO",
+  role: "CEO",
   photo: images.founder,
   message: [
     "Welcome to Humanity Alliance Organization. Our work rests on one belief: every human being deserves access to the basic necessities of life.",
@@ -17,6 +17,7 @@ export const founder = {
  * Register the photo in src/data/images.js first.
  */
 export const team = [
+  { id: "uzair", name: "Uzair Rasheed", role: "Founder", photo: images.uzair, bio: null, social: [] },
   { id: "tayyaba", name: "Tayyaba", role: "President", photo: images.tayyaba, bio: null, social: [] },
   { id: "tehreem", name: "Tehreem", role: "Vice President", photo: images.tehreem, bio: null, social: [] },
 ];

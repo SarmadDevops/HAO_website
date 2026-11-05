@@ -1,11 +1,13 @@
 /**
  * Renders an entry from src/data/images.js with srcset, intrinsic size
- * (prevents layout shift) and lazy loading unless `priority` is set.
+ * (prevents layout shift) and lazy loading. `priority` is for the main (LCP)
+ * image; `eager` skips lazy loading without raising its fetch priority.
  */
 export default function ResponsiveImage({
   image,
   sizes = "100vw",
   priority = false,
+  eager = false,
   alt,
   className = "",
   style,
@@ -19,7 +21,7 @@ export default function ResponsiveImage({
       width={image.width}
       height={image.height}
       alt={alt ?? image.alt}
-      loading={priority ? "eager" : "lazy"}
+      loading={priority || eager ? "eager" : "lazy"}
       decoding={priority ? "auto" : "async"}
       fetchPriority={priority ? "high" : undefined}
       className={className}

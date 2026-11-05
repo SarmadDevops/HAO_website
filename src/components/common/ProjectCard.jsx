@@ -11,6 +11,7 @@ import ResponsiveImage from "./ResponsiveImage";
 export default function ProjectCard({ project, headingLevel: Heading = "h3", showDonate = true, featured = false }) {
   const { openDonate } = useUI();
   const Icon = project.icon;
+  const detailsHref = project.href ?? `/projects/${project.slug}`;
 
   if (featured) {
     return (
@@ -32,7 +33,7 @@ export default function ProjectCard({ project, headingLevel: Heading = "h3", sho
           <Heading className="heading-lg mt-5 text-white">{project.title}</Heading>
           <p className="mt-3 max-w-xl text-lg text-white/85">{project.summary}</p>
           <Link
-            to={`/projects/${project.slug}`}
+            to={detailsHref}
             className="mt-6 inline-flex items-center gap-1.5 font-semibold text-accent after:absolute after:inset-0"
           >
             View details
@@ -60,6 +61,12 @@ export default function ProjectCard({ project, headingLevel: Heading = "h3", sho
             </div>
           )}
         </div>
+        {project.logo && (
+          <ResponsiveImage
+            image={project.logo}
+            className="absolute right-3 top-3 h-auto w-24 rounded-md object-contain shadow-sm sm:w-28"
+          />
+        )}
         {project.image && Icon && (
           <span className="absolute bottom-0 left-5 inline-flex h-12 w-12 translate-y-1/2 items-center justify-center rounded-xl bg-accent text-dark shadow-sm">
             <Icon className="h-6 w-6" aria-hidden="true" />
@@ -71,7 +78,7 @@ export default function ProjectCard({ project, headingLevel: Heading = "h3", sho
         <Heading className="heading-md">{project.title}</Heading>
         <p className="mt-2 flex-1 text-muted">{project.summary}</p>
         <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
-          <Link to={`/projects/${project.slug}`} className="btn-link after:absolute after:inset-0">
+          <Link to={detailsHref} className="btn-link after:absolute after:inset-0">
             View details
             <LuArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
             <span className="sr-only">: {project.title}</span>

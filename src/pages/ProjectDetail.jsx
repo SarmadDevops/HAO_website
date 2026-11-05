@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router-dom";
 import { LuArrowLeft, LuCheck } from "react-icons/lu";
 import { getCause } from "../data/causes";
 import { getProject, projects } from "../data/projects";
@@ -13,6 +13,7 @@ export default function ProjectDetail() {
   const { slug } = useParams();
   const project = getProject(slug);
   if (!project) return <NotFound />;
+  if (project.href) return <Navigate to={project.href} replace />;
   return <ProjectContent key={project.slug} project={project} />;
 }
 

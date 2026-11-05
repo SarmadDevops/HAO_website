@@ -5,8 +5,9 @@ import ResponsiveImage from "./ResponsiveImage";
 /**
  * Banner at the top of inner pages: title, breadcrumb and optional photo.
  * `crumbs` is a list of { label, to } leading up to the current page.
+ * `logo` optionally shows a project logo above the title, sized by `logoClassName`.
  */
-export default function PageHero({ title, intro, image, imagePosition = "50% 50%", crumbs = [] }) {
+export default function PageHero({ title, intro, image, imagePosition = "50% 50%", crumbs = [], logo, logoClassName = "w-36" }) {
   return (
     <section className="relative isolate overflow-hidden bg-primary-dark text-white">
       {image && (
@@ -46,6 +47,9 @@ export default function PageHero({ title, intro, image, imagePosition = "50% 50%
             </li>
           </ol>
         </nav>
+        {logo && (
+          <ResponsiveImage image={logo} eager className={`mt-6 h-auto rounded-lg object-contain ${logoClassName}`} />
+        )}
         <h1 className="heading-xl mt-4 max-w-3xl text-white">{title}</h1>
         {intro && <p className="mt-4 max-w-2xl text-lg text-white/85">{intro}</p>}
       </div>

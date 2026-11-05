@@ -19,7 +19,7 @@ export default function FounderMessage() {
         </Reveal>
 
         <Reveal delay={120}>
-          <p className="eyebrow">A message from our founder</p>
+          <p className="eyebrow">A message from our CEO</p>
           <h2 id="founder-title" className="heading-lg">
             Serving humanity, together
           </h2>

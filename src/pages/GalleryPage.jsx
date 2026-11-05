@@ -21,7 +21,7 @@ export default function GalleryPage() {
       />
       <section aria-label="Photo gallery" className="section">
         <div className="container-site">
-          <GalleryGrid items={gallery} />
+          <GalleryGrid items={gallery} uniform />
         </div>
       </section>
     </>

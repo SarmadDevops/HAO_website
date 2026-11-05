@@ -8,6 +8,8 @@ import {
   LuHeartHandshake,
   LuHeartPulse,
   LuGraduationCap,
+  LuPalette,
+  LuHouse,
 } from "react-icons/lu";
 import { images } from "./images";
 
@@ -20,6 +22,7 @@ import { images } from "./images";
  * - `causeId` links a project to a fundraising campaign in causes.js.
  * - `detailsPending` shows a short note that more information is coming.
  * - `featured` projects appear on the home page.
+ * - `href` sends the project to its own dedicated page instead of /projects/:slug.
  */
 export const projects = [
   {
@@ -129,6 +132,41 @@ export const projects = [
       "Free evening classes in remote districts",
       "Books, school bags, stationery and seating for rural schools",
     ],
+  },
+  {
+    slug: "rang-e-thar",
+    title: "Rang-e-Thar",
+    icon: LuPalette,
+    // TODO(HAO): Temporary placeholder. Replace with a Rang-e-Thar photo.
+    image: images.villageVisit,
+    featured: true,
+    summary:
+      "An HAO project dedicated to the people and communities of Tharparkar, where much of our work already takes place.",
+    body: [
+      "Rang-e-Thar, meaning “colours of Thar”, is an HAO project dedicated to the people and communities of Tharparkar.",
+      "It is part of HAO's wider commitment to Thar, alongside our clean water and education work in the region.",
+    ],
+    highlights: [],
+    detailsPending: true,
+  },
+  {
+    slug: "baitul-rehma",
+    title: "Baitul Rehma",
+    href: "/baitul-rehma/",
+    logo: images.baitulRehmaLogo,
+    icon: LuHouse,
+    // TODO(HAO): Temporary placeholder. Replace with a Baitul Rehma photo.
+    image: images.elderlyVisit,
+    featured: true,
+    causeId: "baitul-rehma",
+    summary:
+      "An HAO project, meaning “house of mercy”, supported through its own dedicated Baitul Rehma Fund.",
+    body: [
+      "Baitul Rehma, meaning “house of mercy”, is a project of Humanity Alliance Organization.",
+      "It has its own dedicated fund, so donors who want to support this work specifically can direct their giving to it.",
+    ],
+    highlights: [],
+    detailsPending: true,
   },
   {
     slug: "green-pakistan",

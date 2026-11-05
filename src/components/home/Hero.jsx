@@ -162,6 +162,7 @@ export default function Hero() {
                     <ResponsiveImage
                       image={slide.image}
                       priority={slideIndex === 0}
+                      eager
                       sizes="(min-width: 1024px) 600px, 100vw"
                       className={`hero-image h-full w-full object-cover transition-transform duration-[9000ms] ease-out ${
                         active && !reducedMotion ? "scale-[1.04]" : "scale-100"

@@ -29,6 +29,18 @@ export const causes = [
     raised: 4000000,
     projectSlug: "education",
   },
+  {
+    // TODO(HAO): Add `goal` and `raised` once verified, and replace the placeholder photo.
+    // Without them the card shows "Funding details coming soon" instead of figures.
+    id: "baitul-rehma",
+    title: "Baitul Rehma",
+    summary:
+      "Baitul Rehma, meaning “house of mercy”, is an HAO project with its own dedicated fund. Give directly to support this work.",
+    image: images.elderlyVisit,
+    logo: images.baitulRehmaLogo,
+    detailsHref: "/baitul-rehma/",
+    donateHref: "/baitul-rehma/donate/",
+  },
 ];
 
 export const getCause = (id) => causes.find((cause) => cause.id === id);

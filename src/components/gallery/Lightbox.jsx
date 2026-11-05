@@ -25,7 +25,7 @@ export default function Lightbox({ items, index, onClose, onChange }) {
     if (!isOpen || count < 2) return;
     [index + 1, index - 1].forEach((i) => {
       const preload = new Image();
-      preload.src = items[(i + count) % count].image.src;
+      preload.src = items[(i + count) % count].image.full;
     });
   }, [isOpen, index, count, items]);
 
@@ -71,7 +71,7 @@ export default function Lightbox({ items, index, onClose, onChange }) {
       >
         <img
           key={item.id}
-          src={item.image.src}
+          src={item.image.full}
           alt={item.image.alt}
           width={item.image.width}
           height={item.image.height}
