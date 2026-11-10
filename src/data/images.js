@@ -24,6 +24,7 @@ import classroomJpg from "../assets/images/photos/rural-classroom-session-1600.j
 import villageVisitJpg from "../assets/images/photos/village-visit-thar-1600.jpg";
 import elderlyVisitJpg from "../assets/images/photos/visiting-elderly-resident-1600.jpg";
 import communityMealJpg from "../assets/images/photos/community-meal-distribution-1600.jpg";
+import uzairFounderWebp from "../assets/images/uzair-founder.webp";
 
 const optimized = import.meta.glob("../assets/images/optimized/*.webp", { eager: true, import: "default" });
 const webp = (name, width) => optimized[`../assets/images/optimized/${name}-${width}.webp`];
@@ -114,7 +115,8 @@ export const images = {
   thar7: photo({ name: "thar-7", widths: [480, 800, 960], height: 1280, alt: "HAO community activities in Thar – 7" }),
 
   founder: photo({ name: "ismael-chohan", widths: [433], height: 577, alt: "Ismael Chohan, CEO of HAO" }),
-  uzair: photo({ name: "uzair", widths: [480, 640], height: 590, alt: "Uzair Rasheed, Founder of HAO" }),
+  // OLD CONTENT: uzair: photo({ name: "uzair", widths: [480, 640], height: 590, alt: "Uzair Rasheed, Founder of HAO" }),
+  uzair: { src: uzairFounderWebp, width: 2047, height: 1980, alt: "Uzair Rasheed, Founder of HAO" },
   tayyaba: photo({ name: "tayyaba", widths: [480, 640], height: 853, alt: "Tayyaba, President of HAO" }),
   tehreem: photo({ name: "tehreem", widths: [480, 640], height: 960, alt: "Tehreem, Vice President of HAO" }),
 };

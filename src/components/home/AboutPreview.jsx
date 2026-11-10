@@ -9,23 +9,34 @@ import ResponsiveImage from "../common/ResponsiveImage";
 export default function AboutPreview({ showLink = true, showTimeline = true }) {
   return (
     <section aria-labelledby="about-title" className="section bg-light">
+      {/* OLD CODE (layout before collage):
       <div className="container-site grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <Reveal className="relative pb-10 pr-6 sm:pb-14 sm:pr-14">
           <div className="aspect-[4/3] overflow-hidden rounded-lg">
-            <ResponsiveImage
-              image={images.school}
-              sizes="(min-width: 1024px) 560px, 100vw"
-              className="h-full w-full object-cover"
-            />
+            <ResponsiveImage image={images.school} sizes="(min-width: 1024px) 560px, 100vw" className="h-full w-full object-cover" />
           </div>
           <div className="absolute bottom-0 right-0 w-[46%] overflow-hidden rounded-lg border-4 border-surface sm:border-8">
-            <ResponsiveImage
-              image={images.handPump}
-              sizes="(min-width: 1024px) 260px, 46vw"
-              className="aspect-[4/3] h-full w-full object-cover"
-            />
+            <ResponsiveImage image={images.handPump} sizes="(min-width: 1024px) 260px, 46vw" className="aspect-[4/3] h-full w-full object-cover" />
           </div>
           <div className="absolute -left-1 top-6 rounded-md bg-accent px-4 py-3 text-dark shadow-lg sm:left-[-1rem] sm:px-5 sm:py-4">
+      */}
+      <div className="container-site grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
+        <Reveal className="relative lg:sticky lg:top-28">
+          <div className="w-[82%] overflow-hidden rounded-lg shadow-md">
+            <ResponsiveImage
+              image={images.classroom}
+              sizes="(min-width: 1024px) 460px, 82vw"
+              className="aspect-[4/3] h-full w-full object-cover object-center"
+            />
+          </div>
+          <div className="relative z-10 -mt-[18%] ml-auto w-[72%] overflow-hidden rounded-lg border-4 border-surface shadow-lg sm:border-8">
+            <ResponsiveImage
+              image={images.school}
+              sizes="(min-width: 1024px) 420px, 72vw"
+              className="aspect-[4/3] h-full w-full object-cover object-center"
+            />
+          </div>
+          <div className="absolute bottom-4 left-0 z-20 rounded-md bg-accent px-4 py-3 text-dark shadow-lg sm:bottom-8 sm:px-5 sm:py-4">
             <p className="text-xs font-semibold uppercase tracking-wider text-dark/75">Serving since</p>
             <p className="font-heading text-3xl font-bold leading-none sm:text-4xl">{site.foundedYear}</p>
           </div>
