@@ -18,7 +18,8 @@ export default function TeamSection() {
           title="Our Leadership & Executive Team"
           intro="Meet the dedicated leaders guiding HAO's vision, overseeing its initiatives, and driving our mission of creating meaningful impact in communities across Pakistan."
         />
-        <ul className="mx-auto mt-12 grid max-w-3xl grid-cols-1 justify-items-center gap-10 xs:grid-cols-2 lg:max-w-none lg:grid-cols-[repeat(auto-fit,minmax(220px,280px))] lg:justify-center">
+        {/* OLD CODE: "... gap-10 xs:grid-cols-2 lg:max-w-none ..." (third card sat alone, left-aligned, on tablets) */}
+        <ul className="mx-auto mt-12 grid max-w-3xl grid-cols-1 justify-items-center gap-10 xs:grid-cols-2 xs:max-md:[&>li:last-child:nth-child(odd)]:col-span-2 md:grid-cols-3 md:gap-6 lg:max-w-none lg:gap-10 lg:grid-cols-[repeat(auto-fit,minmax(220px,280px))] lg:justify-center">
           {team.map((member, index) => (
             <Reveal as="li" key={member.id} index={index} className="w-full max-w-[280px]">
               <TeamMemberCard member={member} />

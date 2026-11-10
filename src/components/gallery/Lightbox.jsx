@@ -42,8 +42,9 @@ export default function Lightbox({ items, index, onClose, onChange }) {
     touchStartX.current = null;
   };
 
+  // OLD CODE: "inline-flex h-12 w-12 items-center ..." (buttons shrank to 32px wide in the phone footer bar)
   const navButton =
-    "inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white hover:text-dark";
+    "inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white hover:text-dark";
 
   return createPortal(
     <div

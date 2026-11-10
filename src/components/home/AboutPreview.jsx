@@ -21,7 +21,8 @@ export default function AboutPreview({ showLink = true, showTimeline = true }) {
           <div className="absolute -left-1 top-6 rounded-md bg-accent px-4 py-3 text-dark shadow-lg sm:left-[-1rem] sm:px-5 sm:py-4">
       */}
       <div className="container-site grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
-        <Reveal className="relative lg:sticky lg:top-28">
+        {/* OLD CODE: <Reveal className="relative lg:sticky lg:top-28"> (collage grew ~900px tall on single-column tablets) */}
+        <Reveal className="relative mx-auto w-full max-w-xl lg:sticky lg:top-28 lg:max-w-none">
           <div className="w-[82%] overflow-hidden rounded-lg shadow-md">
             <ResponsiveImage
               image={images.classroom}

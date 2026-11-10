@@ -70,11 +70,11 @@ export default function MobileMenu({ isOpen, onClose, onDonate, onVolunteer }) {
           </div>
 
           <div className="mt-8 space-y-3 border-t border-border pt-6 text-[0.975rem]">
-            <a href={site.contact.phoneHref} className="flex items-center gap-3 text-dark hover:text-primary">
+            <a href={site.contact.phoneHref} className="flex min-h-[44px] items-center gap-3 text-dark hover:text-primary">
               <LuPhone className="h-5 w-5 text-primary" aria-hidden="true" />
               {site.contact.phone}
             </a>
-            <a href={`mailto:${site.contact.email}`} className="flex items-center gap-3 text-dark hover:text-primary">
+            <a href={`mailto:${site.contact.email}`} className="flex min-h-[44px] items-center gap-3 text-dark hover:text-primary">
               <LuMail className="h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
               <span className="min-w-0">
                 <EmailText email={site.contact.email} />

@@ -84,7 +84,8 @@ export default function Hero() {
                   className={fade(active)}
                 >
                   {slide.badge && (
-                    <span className="mb-3 inline-block rounded-full bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wider text-dark">
+                    // OLD CODE: className="mb-3 inline-block ..." (badge touched the eyebrow rule beside it)
+                    <span className="mb-3 mr-3 inline-block rounded-full bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wider text-dark">
                       {slide.badge}
                     </span>
                   )}
@@ -163,7 +164,8 @@ export default function Hero() {
               const active = slideIndex === index;
               return (
                 <div key={slide.id} aria-hidden={!active} inert={!active} className={`relative ${fade(active)}`}>
-                  <div className="aspect-[16/11] overflow-hidden rounded-2xl bg-border lg:aspect-[4/5] lg:max-h-[min(620px,calc(100svh-210px))] lg:w-full">
+                  {/* OLD CODE: aspect-[16/11] below lg (cropped the portrait Baitul Rehma building on phones/tablets) */}
+                  <div className="aspect-square overflow-hidden sm:aspect-[4/3] rounded-2xl bg-border lg:aspect-[4/5] lg:max-h-[min(620px,calc(100svh-210px))] lg:w-full">
                     <ResponsiveImage
                       image={slide.image}
                       priority={slideIndex === 0}

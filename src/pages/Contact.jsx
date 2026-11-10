@@ -31,7 +31,8 @@ export default function Contact() {
 
       <section className="section">
         <div className="container-site grid gap-12 lg:grid-cols-[5fr_7fr] lg:gap-16">
-          <div>
+          {/* OLD CODE: <div> (grid item could not shrink below its content on 360px phones) */}
+          <div className="min-w-0">
             <h2 className="heading-lg">Get in touch</h2>
             <p className="lead mt-4">
               The quickest way to reach our team is WhatsApp. You can also call, email or send us a message using the
