@@ -83,6 +83,11 @@ export default function Hero() {
                   inert={!active}
                   className={fade(active)}
                 >
+                  {slide.badge && (
+                    <span className="mb-3 inline-block rounded-full bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wider text-dark">
+                      {slide.badge}
+                    </span>
+                  )}
                   <p className="eyebrow">{slide.eyebrow}</p>
                   <h2 className="font-heading text-[clamp(2.6rem,1.6rem+4vw,4.4rem)] font-bold leading-[1.05] tracking-tight text-dark">
                     {slide.title}

@@ -8,6 +8,18 @@ import { images } from "./images";
  */
 export const heroSlides = [
   {
+    id: "baitul-rehma",
+    badge: "Under Construction",
+    eyebrow: "Baitul Rehma | Hafizabad",
+    title: "Building Hope, Shaping Futures",
+    description:
+      "Baitul Rehma is an upcoming humanitarian initiative by HAO, currently under construction in Hafizabad, Pakistan. Together, we're building a place of care, opportunity, and hope for communities in need.",
+    image: images.baitulRehmaHafizabad,
+    position: { mobile: "50% 45%", desktop: "50% 50%" },
+    primary: { label: "Support This Project", action: "link", to: "/baitul-rehma/donate" },
+    secondary: { label: "Explore Baitul Rehma", action: "link", to: "/baitul-rehma" },
+  },
+  {
     id: "clean-water",
     eyebrow: "Empowering rural communities",
     title: "Clean Water for Tharparkar",

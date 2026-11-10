@@ -24,6 +24,7 @@ import classroomJpg from "../assets/images/photos/rural-classroom-session-1600.j
 import villageVisitJpg from "../assets/images/photos/village-visit-thar-1600.jpg";
 import elderlyVisitJpg from "../assets/images/photos/visiting-elderly-resident-1600.jpg";
 import communityMealJpg from "../assets/images/photos/community-meal-distribution-1600.jpg";
+import baitulRehmaHafizabadWebp from "../assets/images/baitul-rehma-hafizabad.webp";
 import uzairFounderWebp from "../assets/images/uzair-founder.webp";
 
 const optimized = import.meta.glob("../assets/images/optimized/*.webp", { eager: true, import: "default" });
@@ -54,6 +55,12 @@ const LANDSCAPE = [480, 800, 1600];
 
 export const images = {
   logo: { src: logo, width: 366, height: 320, alt: "Humanity Alliance Organization logo" },
+  baitulRehmaHafizabad: {
+    src: baitulRehmaHafizabadWebp,
+    width: 960,
+    height: 1280,
+    alt: "Baitul Rehma building under construction in Hafizabad, Pakistan",
+  },
   baitulRehmaLogo: { src: baitulRehmaLogo, width: 1236, height: 559, alt: "Baitul Rehma logo" },
 
   waterPump: photo({
