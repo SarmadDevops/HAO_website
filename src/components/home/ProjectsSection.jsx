@@ -14,13 +14,16 @@ export default function ProjectsSection() {
     <section aria-labelledby="projects-title" className="section bg-primary-dark">
       <div className="container-site">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          {/* OLD CONTENT: eyebrow="Together, we can change lives"
+              title="Key Services & Projects"
+              intro="From a ration bag in 2020 to schools, water pumps and emergency relief. Here is what our volunteers do every day." */}
           <SectionHeader
             id="projects-title"
             tone="light"
             icon={LuHeartHandshake}
-            eyebrow="Together, we can change lives"
-            title="Key Services & Projects"
-            intro="From a ration bag in 2020 to schools, water pumps and emergency relief. Here is what our volunteers do every day."
+            eyebrow="Together, We Can Make a Difference"
+            title="Our Key Initiatives & Projects"
+            intro="From providing essential food assistance in 2020 to supporting education, improving access to clean water, and delivering emergency relief, our work continues to address real community needs. Through dedicated volunteers and collective action, we strive to create lasting, meaningful change in the lives of those we serve."
           />
           <Link to="/projects" className="btn btn-outline-light shrink-0 self-start md:self-auto">
             All projects

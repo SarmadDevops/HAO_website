@@ -16,7 +16,7 @@ export default function About() {
   useSeo({
     title: "About Us",
     description:
-      "Humanity Alliance Organization began its charitable work in 2016 and today is a network of more than 1,500 volunteers across Pakistan and abroad.",
+      "Humanity Alliance Organization began its charitable work in 2019 and today is a network of more than 1,500 volunteers across Pakistan and abroad.",
     path: "/about",
     image: images.villageVisit.src,
   });
@@ -25,7 +25,7 @@ export default function About() {
     <>
       <PageHero
         title="About Us"
-        intro="A volunteer-led charity, started by a small group of people in 2016 and grown into a network that reaches across Pakistan and beyond."
+        intro="A volunteer-led charity, started by a small group of people in 2019 and grown into a network that reaches across Pakistan and beyond."
         image={images.villageVisit}
         imagePosition="50% 40%"
       />

@@ -21,11 +21,14 @@ export default function VolunteerCTA() {
           <div>
             <p className="eyebrow !mb-1">Membership</p>
             <h2 id="volunteer-cta-title" className="heading-md sm:text-[1.65rem]">
-              Become a Change Maker
+              {/* OLD CONTENT: Become a Change Maker */}
+              Be a Part of the Change!
             </h2>
+            {/* OLD CONTENT: Register as a member of HAO and help us bring education and clean water to rural areas like
+              Tharparkar. Students and professionals from every city are welcome. */}
             <p className="mt-1.5 max-w-2xl text-muted">
-              Register as a member of HAO and help us bring education and clean water to rural areas like
-              Tharparkar. Students and professionals from every city are welcome.
+              Join HAO, a youth-led platform empowering communities through meaningful initiatives. Become a member and
+              contribute your skills, ideas, and passion to creating a positive impact across Pakistan.
             </p>
           </div>
           <button type="button" onClick={openVolunteer} className="btn btn-primary btn-lg sm:col-span-2 lg:col-span-1">

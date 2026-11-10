@@ -12,7 +12,8 @@ export const site = {
   // Translation of the Urdu line on the HAO logo: "ایک قدم انسانیت کی طرف".
   tagline: "One step towards humanity",
   taglineUrdu: "ایک قدم انسانیت کی طرف",
-  foundedYear: 2016,
+  // OLD CONTENT: foundedYear: 2016,
+  foundedYear: 2019,
   description:
     "Humanity Alliance Organization (HAO) is a volunteer-led charity in Pakistan. We bring clean water to Tharparkar, support the education of rural children, provide monthly rations and free meals, and respond when disaster strikes.",
 

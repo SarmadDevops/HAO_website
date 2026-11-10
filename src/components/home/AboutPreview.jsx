@@ -34,17 +34,34 @@ export default function AboutPreview({ showLink = true, showTimeline = true }) {
         <Reveal delay={100}>
           <p className="eyebrow">About us</p>
           <h2 id="about-title" className="heading-lg">
-            Serving Humanity Together
+            {/* OLD CONTENT: Serving Humanity Together */}
+            Driven by Purpose, Committed to Humanity
           </h2>
+          {/* OLD CONTENT:
+            Humanity Alliance Organization Pakistan, formerly Human Aid Organization, began its charitable work in
+            2016. We officially launched in March 2020, during the COVID-19 lockdown, with a ration distribution
+            project paid for by our own team.
+            When the pandemic ended, the need did not, so we kept going. Today HAO is a network of more than 1,500
+            volunteers, with city chapters across Pakistan and ambassadors in the USA, UK, Germany and Australia.
+          */}
           <div className="mt-5 space-y-4 text-[1.0625rem] text-muted">
             <p>
-              Humanity Alliance Organization Pakistan, formerly Human Aid Organization, began its charitable work in
-              2016. We officially launched in March 2020, during the COVID-19 lockdown, with a ration distribution
-              project paid for by our own team.
+              Humanity Alliance Organization (HAO), formerly known as Human Aid Organization, is a youth-led,
+              non-profit organization established in 2019 with a mission to create meaningful and lasting change in
+              society.
             </p>
             <p>
-              When the pandemic ended, the need did not, so we kept going. Today HAO is a network of more than 1,500
-              volunteers, with city chapters across Pakistan and ambassadors in the USA, UK, Germany and Australia.
+              Officially launched in March 2020 during the COVID-19 pandemic, HAO began its journey with a self-funded
+              ration distribution initiative, driven by the commitment of its own team to support vulnerable
+              communities.
+            </p>
+            <p>
+              What started as a small initiative has grown into a nationwide network of over 1,500 volunteers, with
+              active chapters across Pakistan and international ambassadors in the USA, UK, Germany, and Australia.
+            </p>
+            <p>
+              Today, HAO continues to work towards empowering communities through humanitarian initiatives, access to
+              education, clean water, and sustainable development.
             </p>
           </div>
 

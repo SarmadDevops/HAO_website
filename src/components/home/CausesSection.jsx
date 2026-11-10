@@ -40,12 +40,14 @@ export default function CausesSection() {
     <section aria-labelledby="causes-title" className="section bg-light">
       <div className="container-site grid gap-10 lg:grid-cols-3 lg:gap-8">
         <Reveal className="lg:pr-6 lg:pt-4">
+          {/* OLD CONTENT: title="Where your donation goes right now"
+              intro="These are the campaigns we are raising funds for today. Every rupee brings a village closer to clean water or a child closer to a proper classroom." */}
           <SectionHeader
             id="causes-title"
             icon={LuHeart}
             eyebrow="Donate for causes"
-            title="Where your donation goes right now"
-            intro="These are the campaigns we are raising funds for today. Every rupee brings a village closer to clean water or a child closer to a proper classroom."
+            title="Where Your Donation Makes a Difference"
+            intro="Your contributions directly support the humanitarian campaigns we are actively working on. From bringing clean water to underserved communities to creating better educational opportunities for children, every donation helps turn essential needs into meaningful change."
           />
         </Reveal>
 
