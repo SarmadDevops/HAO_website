@@ -37,12 +37,28 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Previous: family=Poppins:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400..700 -->
+    <!-- Previous: family=Plus+Jakarta+Sans:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400..700 -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400..700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400..700&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
+    <!-- Netlify Forms registration (detected at deploy time; the React volunteer form posts to it). -->
+    <form name="volunteer" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="subject" />
+      <input name="bot-field" />
+      <input name="fullName" />
+      <input name="email" />
+      <input name="phone" />
+      <input name="city" />
+      <input name="institute" />
+      <select name="department"><option value="">-</option></select>
+      <input name="formType" />
+      <input name="submittedAt" />
+      <input name="page" />
+    </form>
     <noscript>
       <p style="padding: 16px; font-family: sans-serif">
         Please enable JavaScript to view the Humanity Alliance Organization website. You can reach us at

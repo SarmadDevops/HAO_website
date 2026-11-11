@@ -38,6 +38,9 @@ function CampaignCard({ causeId }) {
   );
 }
 
+/* Removed experiment: AccentTitle wrapped the phrase after the last ", " or " for "
+   in <span className="text-secondary"> (logo maroon). */
+
 export default function Hero() {
   const reducedMotion = usePrefersReducedMotion();
   const [index, setIndex] = useState(0);
@@ -90,7 +93,9 @@ export default function Hero() {
                     </span>
                   )}
                   <p className="eyebrow">{slide.eyebrow}</p>
-                  <h2 className="font-heading text-[clamp(2.6rem,1.6rem+4vw,4.4rem)] font-bold leading-[1.05] tracking-tight text-dark">
+                  {/* Previous weight: font-bold */}
+                  <h2 className="font-heading text-[clamp(2.6rem,1.6rem+4vw,4.4rem)] font-extrabold leading-[1.05] tracking-tight text-dark">
+                    {/* Removed experiment: <AccentTitle title={slide.title} /> (maroon phrase accent) */}
                     {slide.title}
                   </h2>
                   <p className="lead mt-5 max-w-xl">{slide.description}</p>

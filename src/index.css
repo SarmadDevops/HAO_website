@@ -53,14 +53,19 @@
     line-height: 2.2;
   }
 
+  /* Previous selector: h1, h2, h3, h4 */
   h1,
   h2,
   h3,
-  h4 {
+  h4,
+  h5,
+  h6 {
     @apply font-heading text-dark;
+    font-weight: 700; /* was browser default bold */
     line-height: 1.15;
     letter-spacing: -0.015em;
     text-wrap: balance;
+    overflow-wrap: break-word; /* long words wrap on mobile */
   }
 
   p {
@@ -111,11 +116,15 @@
   .heading-xl {
     font-size: clamp(2.4rem, 1.6rem + 3.5vw, 4rem);
     line-height: 1.08;
+    font-weight: 800; /* added for stronger page titles */
+    letter-spacing: -0.025em;
   }
 
   .heading-lg {
     font-size: clamp(2rem, 1.5rem + 2.2vw, 3rem);
     line-height: 1.1;
+    font-weight: 800; /* added for stronger section headings */
+    letter-spacing: -0.02em;
   }
 
   .heading-md {
@@ -128,8 +137,9 @@
   }
 
   /* Buttons ------------------------------------------------------- */
+  /* Previous: @apply font-heading inline-flex … (buttons used the heading font) */
   .btn {
-    @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-md px-5 py-2.5 text-[0.975rem] font-semibold leading-tight transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-60;
+    @apply font-sans inline-flex min-h-[44px] items-center justify-center gap-2 rounded-md px-5 py-2.5 text-[0.975rem] font-semibold leading-tight transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-60;
   }
 
   .btn-lg {
@@ -182,6 +192,15 @@
 
   .form-input {
     @apply block min-h-[46px] w-full rounded-md border border-border bg-white px-3.5 py-2.5 text-base text-ink placeholder:text-muted/70 transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20;
+  }
+
+  /* Keep autofilled inputs on the same white background and ink text. */
+  .form-input:-webkit-autofill,
+  .form-input:-webkit-autofill:hover,
+  .form-input:-webkit-autofill:focus {
+    -webkit-text-fill-color: rgb(var(--color-ink));
+    box-shadow: 0 0 0 1000px #fff inset;
+    caret-color: rgb(var(--color-ink));
   }
 
   .form-input[aria-invalid="true"] {
@@ -282,4 +301,11 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Homepage only: main headings on cream/soft-green sections use dark forest green.
+   Dark-green sections keep white headings.
+   Removed experiment: .heading-lg:not(.text-white) { color: rgb(var(--color-secondary)); } (logo maroon) */
+.home-page :is(.bg-light, .bg-primary-soft) h2:not(.text-white) {
+  color: #10251b;
 }

@@ -19,6 +19,15 @@ const ENDPOINTS = {
 
 const TIMEOUT_MS = 20000;
 
+// Forms submitted through Netlify Forms when no custom endpoint is set.
+// Registered by the hidden <form name="volunteer" data-netlify> in index.html;
+// email notifications are configured in the Netlify dashboard.
+const NETLIFY_FORMS = {
+  volunteer: { subject: "New HAO Volunteer Registration" },
+};
+const viaNetlify = (formType) =>
+  !ENDPOINTS[formType] && import.meta.env.PROD && Boolean(NETLIFY_FORMS[formType]);
+
 export class FormNotConfiguredError extends Error {
   constructor(formType) {
     super(`No endpoint is configured for the "${formType}" form.`);
@@ -28,7 +37,7 @@ export class FormNotConfiguredError extends Error {
 }
 
 export function isFormConfigured(formType) {
-  return Boolean(ENDPOINTS[formType]);
+  return Boolean(ENDPOINTS[formType]) || viaNetlify(formType);
 }
 
 /**
@@ -36,6 +45,7 @@ export function isFormConfigured(formType) {
  * @param {Record<string, string>} values
  */
 export async function submitForm(formType, values) {
+  if (viaNetlify(formType)) return submitToNetlify(formType, values);
   const url = ENDPOINTS[formType];
   if (!url) throw new FormNotConfiguredError(formType);
 
@@ -69,6 +79,35 @@ export async function submitForm(formType, values) {
         throw new Error(data.message || data.error || "The submission was not accepted.");
       }
       return data;
+    }
+    return null;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+async function submitToNetlify(formType, values) {
+  const body = new URLSearchParams({
+    "form-name": formType,
+    subject: NETLIFY_FORMS[formType].subject,
+    "bot-field": "",
+    ...Object.fromEntries(Object.entries(values).map(([key, value]) => [key, value ?? ""])),
+    formType,
+    submittedAt: new Date().toISOString(),
+    page: window.location.pathname,
+  });
+
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
+  try {
+    const response = await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: body.toString(),
+      signal: controller.signal,
+    });
+    if (!response.ok) {
+      throw new Error(`The server responded with status ${response.status}.`);
     }
     return null;
   } finally {

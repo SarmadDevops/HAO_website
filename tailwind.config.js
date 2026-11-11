@@ -32,8 +32,12 @@ export default {
         danger: token("danger"),
       },
       fontFamily: {
-        heading: ["Poppins", "system-ui", "sans-serif"],
-        sans: ["Poppins", "system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"],
+        // Previous: heading: ["Poppins", "system-ui", "sans-serif"],
+        // Previous: sans: ["Poppins", "system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"],
+        // Previous: heading: ["Plus Jakarta Sans", "system-ui", "sans-serif"],
+        // Previous: sans: ["DM Sans", "system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"],
+        heading: ["Manrope", "system-ui", "sans-serif"],
+        sans: ["Inter", "system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"],
       },
       maxWidth: {
         site: "1240px",

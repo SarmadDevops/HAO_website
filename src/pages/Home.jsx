@@ -16,7 +16,8 @@ export default function Home() {
   useSeo({ path: "/" });
 
   return (
-    <>
+    // Previous wrapper: <> … </>. "contents" keeps layout identical; "home-page" scopes homepage-only heading colours.
+    <div className="home-page contents">
       <Hero />
       <VolunteerCTA />
       <AboutPreview />
@@ -29,6 +30,6 @@ export default function Home() {
       <FounderMessage />
       <TeamSection />
       <BlogPreview />
-    </>
+    </div>
   );
 }

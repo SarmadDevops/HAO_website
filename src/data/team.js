@@ -18,6 +18,8 @@ export const founder = {
  */
 export const team = [
   { id: "uzair", name: "Uzair Rasheed", role: "Founder", photo: images.uzair, bio: null, social: [] },
-  { id: "tayyaba", name: "Tayyaba", role: "President", photo: images.tayyaba, bio: null, social: [] },
-  { id: "tehreem", name: "Tehreem", role: "Vice President", photo: images.tehreem, bio: null, social: [] },
+  // Previous name: "Tayyaba"
+  { id: "tayyaba", name: "Tayyaba Amin", role: "President", photo: images.tayyaba, bio: null, social: [] },
+  // Previous name: "Tehreem"
+  { id: "tehreem", name: "Tehreem Qureshi", role: "Vice President", photo: images.tehreem, bio: null, social: [] },
 ];

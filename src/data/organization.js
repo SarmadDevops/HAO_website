@@ -106,4 +106,5 @@ export const volunteerDepartments = [
   "Logistics",
   "Research",
   "PR & Marketing",
+  "Food Drive Management",
 ];
